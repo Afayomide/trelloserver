@@ -8,7 +8,7 @@ const indexRouter = require("./routes/index");
 
 const port = 4000;
 const corsOption = {
-  origin: ["http://localhost:5173", "https://audet.vercel.app"],
+  origin: ["http://localhost:5173", "https://trello-rehla.vercel.app"],
   credentials: true,
 };
 
