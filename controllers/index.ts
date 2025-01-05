@@ -70,7 +70,7 @@ export const updateTasks = async (req: Request, res: Response) => {
     }
     await pool.query(
       "INSERT INTO task_history (task_id, action, column_id, position, title) VALUES ($1, $2, $3, $4, $5)",
-      [task.id, "updated", task.column_id, task.position, task.title]
+      [task.id, "updated", column_id, position, task.title]
     );
 
     await pool.query(
