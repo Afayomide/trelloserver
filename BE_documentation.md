@@ -5,8 +5,6 @@
 - **URL**: `/tasks`
 - **Method**: `POST`
 - **Description**: Adds a new task to the task board by inserting the task details into the database. It also logs the creation of the task in the task history.
-- **Request Headers**:
-  - **Authorization**: JWT token (required).
 - **Request Body**:
   - **`title`** (required): The title of the task (string).
   - **`description`** (required): The description of the task (string).
@@ -103,8 +101,6 @@ This function ensures that tasks are added to the board and logged in the system
 - **URL**: `/tasks`
 - **Method**: `GET`
 - **Description**: Fetches tasks from the task board. You can optionally filter the tasks by specifying a `column_id` in the query parameters. The tasks are returned in ascending order of their `position`.
-- **Request Headers**:
-  - **Authorization**: JWT token (required).
 - **Request Query Parameters**:
   - **`column_id`** (optional): The ID of the column from which to fetch tasks. If provided, only tasks from the specified column will be returned.
 - **Response**:
@@ -184,8 +180,6 @@ This function allows users to fetch tasks from the task board, with an optional 
 - **URL**: `/tasks/:id`
 - **Method**: `PUT`
 - **Description**: Updates the column and/or position of an existing task. This action also logs the change in the `task_history` table. The task's details will be updated based on the provided data in the request body.
-- **Request Headers**:
-  - **Authorization**: JWT token (required).
 - **Request Parameters**:
   - **`id`** (required): The ID of the task to update.
 - **Request Body**:
@@ -266,8 +260,6 @@ This function allows users to update a task's column and position, while ensurin
 - **URL**: `/tasks/:id`
 - **Method**: `DELETE`
 - **Description**: Deletes an existing task from the system. This action also logs the task deletion in the `task_history` table. The task is identified by its unique `id`.
-- **Request Headers**:
-  - **Authorization**: JWT token (required).
 - **Request Parameters**:
   - **`id`** (required): The ID of the task to delete.
 - **Response**:
@@ -346,8 +338,6 @@ This function allows users to delete a task and ensures that the task's deletion
 - **URL**: `/task-history`
 - **Method**: `GET`
 - **Description**: Fetches all records from the task history, ordered by the most recent creation date.
-- **Request Headers**:
-  - **Authorization**: JWT token (required).
 - **Response**:
   - **Success Response**:
     - **Code**: `200 OK`
